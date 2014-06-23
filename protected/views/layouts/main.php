@@ -17,6 +17,7 @@
 			<a href="/">My Business</a>
 		</div>
 		<!-- language menu -->
+        <?php $this->widget('application.widgets.LngSelectWidget')?>
 	</div>
 </div>
 <div id="wrapper">
