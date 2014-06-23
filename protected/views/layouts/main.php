@@ -26,13 +26,15 @@
 		
 	</div>
 	<!-- navigation 1 -->
+     <?php $this->widget('application.widgets.TopMenuWidget')?>
 </header>
 <div id="container">
 	<section>
 		<div id="left">
 			
 			<div class="column-item">
-				<!-- navigation 2 -->			
+				<!-- navigation 2 -->
+                 <?php $this->widget('application.widgets.LeftMenuWidget')?>
 			</div>
 			
 			<!-- column content -->
@@ -55,6 +57,7 @@
 		</div>
 		<div id="footer-right">
 			<!-- navigation 3 -->
+            <?php $this->widget('application.widgets.FootMenuWidget')?>
 		</div>
 	</div>
 </footer>
