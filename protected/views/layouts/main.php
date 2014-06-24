@@ -6,6 +6,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<link href="/css/core.css" rel="stylesheet" type="text/css" />
+    
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -63,6 +64,8 @@
 </footer>
 </div>
 <script src="/js/jquery-1.6.4.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/language.js"></script>
 <script src="/js/core.js"></script>
 </body>
 </html>

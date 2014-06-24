@@ -3,7 +3,10 @@ class TopMenuWidget extends CWidget {
 
     public function run(){
         
-        $objNav = Navigation::model()->with(array('page_content'=> array('on'=>'page_content.language = 4')))->findAllByAttributes(array('type' => 1),array('order'=>'priority ASC'));
+        $currLng = Yii::app()->getLanguage();        
+        $objLanguage = Languages::model()->findByAttributes(array('prefix'=>$currLng));
+        
+        $objNav = Navigation::model()->with(array('page_content'=> array('on'=>'page_content.language = '.$objLanguage->id)))->findAllByAttributes(array('type' => 1),array('order'=>'priority ASC'));
     
     
         $this->render('top_menu',array('objNav' => $objNav));
