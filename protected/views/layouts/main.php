@@ -63,6 +63,8 @@
 </footer>
 </div>
 <script src="/js/jquery-1.6.4.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/language.js"></script>
 <script src="/js/core.js"></script>
 </body>
 </html>
