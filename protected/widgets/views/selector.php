@@ -1,12 +1,7 @@
 <form method="post">
     <select id="language" name="language">
-        <?php foreach($cntLng as $row):?>
-            <?php if($row->prefix == $prefix):?>
-            <option selected="true" value="<?php echo $row->prefix; ?>"><?php echo $row->label;?></option>
-            <?php else:?>
-            <option  value="<?php echo $row->prefix; ?>"><?php echo $row->label;?></option>
-            <?php endif;?>
-        <?php endforeach;?>
-        
+        <option value="1">English</option>
+        <option value="2">Chinese</option>
+        <option value="3">German</option>
     </select>
 </form>
