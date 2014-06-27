@@ -62,8 +62,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=ymulti',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'ymulti',
+			'password' => '1234',
 			'charset' => 'utf8',
 		),
 		
