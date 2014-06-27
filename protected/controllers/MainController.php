@@ -3,12 +3,18 @@
 class MainController extends Controller{
     
     public function actionIndex(){
-        $this->render('index');
+        $currLanguage = Yii::app()->getLanguage();
+        $objLng = Languages::model()->findByAttributes(array('prefix'=>$currLanguage));
+        $objPage = PagesContent::model()->findByAttributes(array('language' => $objLng->id,'page' => 1));
+
+        $this->render('page',array('objPage'=>$objPage));
+        
     }
     
     
     public function actionError(){
         $currLanguage = Yii::app()->getLanguage();
+        $this->d($currLanguage);
         $objLng = Languages::model()->findByAttributes(array('prefix'=>$currLanguage));
         $objPage = PagesContent::model()->findByAttributes(array('language' => $objLng->id,'page' => 2));
 
