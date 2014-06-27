@@ -8,11 +8,16 @@ class MainController extends Controller{
     
     
     public function actionError(){
-        $this->render('error');
+        $currLanguage = Yii::app()->getLanguage();
+        $objLng = Languages::model()->findByAttributes(array('prefix'=>$currLanguage));
+        $objPage = PagesContent::model()->findByAttributes(array('language' => $objLng->id,'page' => 2));
+
+        $this->render('page',array('objPage'=>$objPage));
     }
     
     public function actionGetPage($id){
          $currLanguage = Yii::app()->getLanguage();
+
          $objLng = Languages::model()->findByAttributes(array('prefix'=>$currLanguage));
          $objPage = PagesContent::model()->findByAttributes(array('language' => $objLng->id,'page' => $id));
        
