@@ -1,7 +1,7 @@
 <nav>
     <ul id="navigation-left">
-        <li><a href="#">Main</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About</a></li>
+        <?php foreach($objNav as $row):?>
+        <li><?php echo CHtml::link($row->page_content->name,'/'.$prefix.'/main/getpage/'.$row->page_content->page);?></a></li>
+        <?php endforeach;?>        
     </ul><!-- /navigation-left --> 
 </nav>

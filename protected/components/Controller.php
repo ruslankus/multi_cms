@@ -24,6 +24,7 @@ class Controller extends CController
     public function __construct($id,$module=null){
         parent::__construct($id,$module);
         // If there is a post-request, redirect the application to the provided url of the selected language 
+       
         if(isset($_POST['language'])) {
             $lang = $_POST['language'];
             $MultilangReturnUrl = $_POST[$lang];
