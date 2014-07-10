@@ -14,21 +14,34 @@ class MainController extends Controller{
     
     public function actionError(){
         $currLanguage = Yii::app()->getLanguage();
-        $this->d($currLanguage);
+        
         $objLng = Languages::model()->findByAttributes(array('prefix'=>$currLanguage));
         $objPage = PagesContent::model()->findByAttributes(array('language' => $objLng->id,'page' => 2));
 
         $this->render('page',array('objPage'=>$objPage));
     }
     
-    public function actionGetPage($id){
+    public function actionGetPage($id=null){
+         $id = (int)$id;
+         //$this->d($id);           
          $currLanguage = Yii::app()->getLanguage();
 
          $objLng = Languages::model()->findByAttributes(array('prefix'=>$currLanguage));
          $objPage = PagesContent::model()->findByAttributes(array('language' => $objLng->id,'page' => $id));
-       
-         $this->render('page',array('objPage'=>$objPage));   
+         
+         if(!empty($objPage)){
+            $this->render('page',array('objPage'=>$objPage));   
+         }else{
+           
+            $this->redirect('/'.$currLanguage.'/main/error');
+         }
+            
+           
     }//GetPage
+    
+    public function actionCheck(){
+        
+    }
     
 }
 ?>

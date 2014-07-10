@@ -19,7 +19,7 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
-		'application.components.*',
+		'application.components.*',        
 	),
 
 	'modules'=>array(
@@ -48,9 +48,12 @@ return array(
 			'rules'=>array(
                 '<language:\w{2}>/'=>'main/index',
                
-				'<language:\w{2}>/<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<language:\w{2}>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+                '<language:\w{2}>/main/error'=>'main/error',
+                '<language:\w{2}>/<controller:\w+>'=>'<controller>/index',                  
+				'<language:\w{2}>/<controller:\w+>/<id:\w+>'=>'<controller>/view',
+				'<language:\w{2}>/<controller:\w+>/<action:\w+>/<id:\w+>'=>'<controller>/<action>',
 				'<language:\w{2}><controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                
 			),
 		),
 		
